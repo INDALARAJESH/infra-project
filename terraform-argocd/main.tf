@@ -16,7 +16,7 @@ resource "aws_instance" "jenkins_server" {
     sudo apt update -y
 
     # Install AWS CLI v2
-    sudo snap install aws-cli --classic -y
+    sudo snap install aws-cli --classic
 
     # Install kubectl
     sudo curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
