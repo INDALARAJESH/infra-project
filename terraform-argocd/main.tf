@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-east-1"  # Adjust as needed
 }
 
-resource "aws_instance" "jenkins_server" {
+resource "aws_instance" "argocd_server" {
   ami           = "ami-0e86e20dae9224db8"  # Ubuntu 22.04 LTS AMI (adjust based on region)
   instance_type = "t3.medium"
   key_name      = "project"  # Replace with your key pair
@@ -19,9 +19,7 @@ resource "aws_instance" "jenkins_server" {
     sudo snap install aws-cli --classic
 
     # Install kubectl
-    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-    chmod +x kubectl
-    sudo mv kubectl /usr/local/bin
+    sudo snap install kubectl --classic
     sudo apt install gh -y
 
   EOF
