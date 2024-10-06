@@ -4,6 +4,21 @@
 - Ensure that you have a Kubernetes cluster running on EKS.
 - Install `kubectl` and configure it to interact with your EKS cluster.
 
+## AWS CLI Configuration
+    ```bash
+    aws configure
+    ```
+You will be prompted to enter the following details:
+- AWS Access Key ID: Your access key ID.
+- AWS Secret Access Key: Your secret access key.
+- Default region name: The AWS region you want to work in (e.g., us-west-2).
+- Default output format: The format in which you want to see the output (e.g., json, text, or table).
+
+## Update Kubeconfig for EKS 
+    ```bash
+    aws eks update-kubeconfig --name <your-cluster-name> --region <your-region>
+    ```
+
 ## Step 1: Install ArgoCD in EKS
 
 1. Create a namespace for ArgoCD:
